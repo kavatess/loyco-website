@@ -1,0 +1,5 @@
+<div>
+  <p [innerHTML]="'widget.nanoDonation.minPaymentDate' | translate: { value: data.DebitDt | date: 'dd/MM/yyyy' }"></p>
+  <span class="ly-money" [innerHTML]="'widget.nanoDonation.totalDonationAmount' | translate: { value: data.GpPmtAmt }"></span>
+  <p [innerHTML]="'widget.nanoDonation.foundationName' | translate: { value: data.FoundationName }"></p>
+</div>

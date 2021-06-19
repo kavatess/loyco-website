@@ -1,0 +1,14 @@
+<ly-component-layout class="ly-absences-to-be-validated" [component]="this.self">
+    <!--title-->
+    <span title-component>{{ 'widget.absenceTask.title' | i18n }}</span>
+    <!--content-->
+    <div content-component>
+        <div class="ly-content-body">
+            <div *ngIf="hasData">
+                <span class="ly-validate-number" [ngClass]="{'ly-x-no-validate':!data}">{{ data }}</span>
+                <span class="text">{{ data ? ('widget.absenceTask.message.hasAbsencesToBeValidated' | i18n)
+                                                    : ('widget.absenceTask.message.noAbsencesToBeValidated' | i18n) }}</span>
+            </div>
+        </div>
+    </div>
+</ly-component-layout>

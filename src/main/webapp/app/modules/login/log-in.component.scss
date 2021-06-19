@@ -1,0 +1,35 @@
+@import 'scss/variables';
+.ly-login-form {
+  margin-top: 30px;
+  line-height: 30px;
+  font-size: $ly-font-size;
+  .ly-label {
+    color: $ly-form-control-label-color;
+    font-size: $ly-font-size;
+    margin-bottom: 0.25em;
+    .ly-require-icon {
+      padding-left: 3px;
+      padding-bottom: 10px;
+    }
+  }
+  .ly-username-input,
+  .ly-password-input {
+    width: 250px;
+    padding: 5px;
+    box-sizing: border-box;
+    overflow: visible;
+    border: 1px $ly-neutral-color7 solid;
+    background-color: $ly-neutral-color2;
+  }
+  .ly-login-button {
+    padding: 10px 10px;
+    line-height: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    border: 2px solid $ly-neutral-color8;
+  }
+  .ly-login-button:hover {
+    color: $ly-brand-color;
+    background-color: $ly-neutral-color2;
+  }
+}

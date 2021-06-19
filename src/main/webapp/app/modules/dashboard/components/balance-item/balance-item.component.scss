@@ -1,0 +1,16 @@
+.ly-balance-item {
+  margin-bottom: 10px;
+  .ly-list-item-container {
+    margin-top: 10px;
+    display: flex;
+    .ly-list-item {
+      width: 100%;
+      .ly-content-circle-number {
+        font-size: 180%;
+      }
+      .ly-content-circle-type {
+        font-size: 110%;
+      }
+    }
+  }
+}

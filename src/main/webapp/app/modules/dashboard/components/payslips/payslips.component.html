@@ -1,0 +1,28 @@
+<ly-component-layout id="payslips" [component]="this.self">
+    <!--title-->
+    <span title-component>{{ 'widget.myLastPayslips.title' | i18n }}</span>
+    <div content-component class="payslips-content">
+        <table *ngIf="hasData" class="payslips-table">
+            <tr class="table-title">
+                <th class="payment-date">{{ 'widget.myLastPayslips.paymentDate' | i18n }}</th>
+                <th>{{ 'widget.myLastPayslips.description' | i18n }}</th>
+                <th>{{ 'widget.myLastPayslips.download' | i18n }}</th>
+                <th>{{ 'widget.myLastPayslips.preview' | i18n }}</th>
+            </tr>
+            <tr *ngFor="let item of data.slice(0, 3)">
+                <td class="payment-date">{{ item.PaymentDate | date: 'd/MM/y' }}</td>
+                <td>{{ item.Description }}</td>
+                <td>
+                    <button mat-button (click)="getDownloadUrl(item.FileName)">
+                        <i class='material-icons rotate-180'>publish</i>
+                    </button>
+                </td>
+                <td>
+                    <button mat-button (click)="openDialog(item.FileName)">
+                        <i class='material-icons'>search</i>
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+</ly-component-layout>

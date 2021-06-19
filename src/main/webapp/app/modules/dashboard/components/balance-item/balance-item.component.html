@@ -1,0 +1,13 @@
+<div class="ly-balance-item">
+  <div class="ly-list-item-container">
+    <div *ngFor="let item of data.listItem" class="ly-list-item">
+      <ly-progress-circle [data]="item.percent">
+        <span title-circle>{{ item.typeBalance | i18n }}</span>
+        <span content-circle-number class="ly-content-circle-number">
+          {{ item.countDay }}
+        </span>
+        <p content-circle-type class="ly-content-circle-type">{{ data.durationType }}</p>
+      </ly-progress-circle>
+    </div>
+  </div>
+</div>

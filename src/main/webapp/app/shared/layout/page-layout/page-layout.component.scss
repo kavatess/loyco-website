@@ -1,0 +1,25 @@
+.ly-page-layout-container {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  max-width: 1440px;
+  box-sizing: border-box;
+  align-self: center;
+  margin: auto;
+  .ly-page-layout {
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 12px;
+    border: 1px #dddcdc solid;
+    .ly-title {
+      width: 100%;
+      border-bottom: 1px #dddcdc solid;
+      padding-bottom: 7px;
+      margin: 8px 0px 8px 0px;
+      display: inline-block;
+    }
+  }
+  .ly-actions {
+    max-width: 720px !important;
+  }
+}

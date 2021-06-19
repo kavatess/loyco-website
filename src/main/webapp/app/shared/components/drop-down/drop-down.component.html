@@ -1,0 +1,15 @@
+<div class="ly-drop-down" [ngClass]="isClicked ? 'ly-x-selected' : ''">
+  <div class="ly-list" [ngClass]="userOption ? 'ly-x-list-user' : ''">
+    <div class="ly-item" *ngFor="let item of data.list" (click)="selectItem(item.key)">
+      <div [ngClass]="item.icon"></div>
+      <div [ngClass]="data.id">{{ item.text }}</div>
+    </div>
+  </div>
+  <label class="ly-label-container" for="check-dropdown-{{ data.id }}">
+    <div [ngClass]="[data.label.class, userOption ? 'ly-x-userOption' : '']"></div>
+    <div [hidden]="data.label.text == ''">
+      {{ data.label.text }}
+    </div>
+    <div class="fa fa-sort-down ly-hidden" [ngClass]="data.id === 'app-data' ? 'ly-app-data' : ''"></div>
+  </label>
+</div>

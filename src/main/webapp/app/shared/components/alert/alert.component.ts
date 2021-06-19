@@ -1,0 +1,33 @@
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { JhiAlertService, JhiAlert } from 'ng-jhipster';
+
+@Component({
+  selector: 'ly-alert',
+  template: ``,
+})
+export class AlertComponent implements OnInit, OnDestroy {
+  alerts: JhiAlert[] = [];
+
+  constructor(private alertService: JhiAlertService) {}
+
+  ngOnInit(): void {
+    this.alerts = this.alertService.get();
+  }
+
+  setClasses(alert: JhiAlert): { [key: string]: boolean } {
+    const classes = { 'ly-toast': Boolean(alert.toast) };
+    if (alert.position) {
+      return { ...classes, [alert.position]: true };
+    }
+    return classes;
+  }
+
+  ngOnDestroy(): void {
+    this.alertService.clear();
+  }
+
+  close(alert: JhiAlert): void {
+    // NOSONAR can be removed after https://github.com/SonarSource/SonarJS/issues/1930 is resolved
+    alert.close?.(this.alerts); // NOSONAR
+  }
+}

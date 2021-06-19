@@ -1,0 +1,23 @@
+.ly-team-absences-info {
+  line-height: 25px;
+  font-size: 14px;
+  width: 150px;
+  margin-left: 30px;
+
+  #name {
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .ly-team-absences-info {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .ly-team-absences-info {
+    margin-left: 5px;
+    width: 110px;
+  }
+}

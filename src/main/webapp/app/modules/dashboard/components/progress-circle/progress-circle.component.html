@@ -1,0 +1,13 @@
+<div class="ly-progress-circle-container">
+  <div class="ly-title-progress-circle">
+    <ng-content select="[title-circle]"></ng-content>
+  </div>
+  <div class="ly-progress-circle">
+    <mat-progress-spinner diameter="145" value="{{ data }}" id="progress"> </mat-progress-spinner>
+    <mat-progress-spinner diameter="145" value="100" id="base"> </mat-progress-spinner>
+  </div>
+  <div class="ly-content-progress-circle">
+    <ng-content select="[content-circle-number]" id="content"></ng-content>
+    <ng-content select="[content-circle-type]" id="content"></ng-content>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<div class="owl-carousel owl-theme" id="application-list-carousel">
+    <span *ngFor="let app of appData.list" class="ly-app-item" [matTooltip]="'app.' + app.key + '.description' | i18n" matTooltipClass="ly-tooltip">
+        <div [ngClass]="app.icon" (click)="clickedApp.emit(app.key)"></div>
+        <div class="ly-text" (click)="clickedApp.emit(app.key)">{{ app.text }}</div>
+    </span>
+</div>

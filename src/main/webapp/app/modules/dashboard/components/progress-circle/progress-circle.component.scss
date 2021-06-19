@@ -1,0 +1,39 @@
+@import 'scss/variables';
+.ly-progress-circle-container {
+  position: relative;
+  text-align: center !important;
+  width: 100%;
+  .ly-title-progress-circle {
+    font-weight: bold;
+    font-size: 15px;
+  }
+  .ly-progress-circle {
+    margin-top: 12px;
+    width: 100%;
+    margin-left: calc((100% - 144px) / 2);
+  }
+  .ly-content-progress-circle {
+    margin-top: -102px;
+    z-index: 3;
+    width: 100%;
+    font-weight: 600;
+    color: #277bc3;
+    position: absolute;
+  }
+}
+.ly-progress-circle ::ng-deep circle {
+  stroke-width: 12% !important;
+}
+.ly-progress-circle ::ng-deep #progress circle {
+  stroke: #277bc3;
+}
+.ly-progress-circle ::ng-deep #base circle {
+  stroke: $ly-neutral-color7;
+}
+#progress {
+  float: left;
+  z-index: 2;
+}
+#base {
+  z-index: 1;
+}

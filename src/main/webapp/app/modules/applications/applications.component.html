@@ -1,0 +1,13 @@
+<ly-page-layout class="ly-application" *ngIf="hasData">
+  <div title-page>
+    <span class="ly-icon-24 ly-icon-application"></span>
+    <span class="ly-page-title">{{ 'tab.applications' | i18n }}</span>
+  </div>
+  <ly-component-layout content-page [component]="this">
+    <div content-component class="ly-app-container">
+      <div *ngFor="let app of data">
+        <ly-card [data]="app"></ly-card>
+      </div>
+    </div>
+  </ly-component-layout>
+</ly-page-layout>

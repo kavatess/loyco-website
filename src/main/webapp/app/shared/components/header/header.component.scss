@@ -1,0 +1,208 @@
+@import "scss/variables";
+.ly-header {
+  background-color: $ly-neutral-color5;
+  box-shadow: 0 3px 3px hsla(0, 0%, 0%, 0.1);
+  .ly-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    .nav-all {
+      display: none;
+    }
+    @media screen and (min-width: 768px) {
+      .nav-all {
+        display: block;
+      }
+    }
+    @media screen and (min-width: 1024px) {
+      .nav-all {
+        display: flex;
+      }
+    }
+    .ly-logo-center {
+      display: none;
+      @media screen and (min-width: 1024px) {
+        display: block;
+      }
+    }
+    .ly-menu {
+      display: flex;
+      margin-right: auto;
+      align-items: center;
+      .ly-list-app {
+        display: none;
+        @media screen and (min-width: 768px) {
+          display: block;
+          margin-left: 5px;
+        }
+      }
+    }
+    .ly-middle-section {
+      max-width: 70%;
+    }
+    .ly-right-section {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      @media screen and (min-width: 1024px) {
+        flex-grow: inherit;
+      }
+      .ly-tool-bar {
+        display: flex;
+        @media screen and (min-width: 1024px) {
+          padding-top: 8px;
+          padding-bottom: 8px;
+          justify-content: flex-end;
+        }
+        .ly-menu {
+          @media screen and (min-width: 1024px) {
+            display: none !important;
+          }
+        }
+        .ly-locale-force {
+          display: flex;
+          width: 50px;
+          margin-top: 10px;
+          margin-right: -5px;
+          align-items: center;
+          .fa-sort-down {
+            display: none;
+            color: $ly-neutral-color9;
+            font-size: 15px;
+          }
+          @media screen and (min-width: 1024px) {
+            margin-bottom: 5px;
+          }
+          @media screen and (min-width: 768px) {
+            margin-bottom: 5px;
+            margin-top: 0px;
+            margin-right: 10px;
+            justify-content: space-between;
+            .fa-sort-down {
+              display: block;
+            }
+          }
+        }
+      }
+      .ly-list-page {
+        display: flex;
+        @media screen and (min-width: 1024px) {
+          margin-left: auto;
+        }
+        .ly-divider {
+          border-color: $ly-neutral-color7;
+          border-style: solid;
+          border-width: 0 1px 0 0;
+          height: 2rem;
+          margin: 4px 0;
+          display: none;
+          @media screen and (min-width: 1024px) {
+            display: block;
+          }
+        }
+      }
+      .ly-active {
+        .ly-icon-24:before {
+          padding: 12px;
+          background-color: $ly-brand-color;
+          color: #fff;
+          border-radius: 50%;
+        }
+        @media screen and(min-width: 768px) {
+          border-bottom: 3px solid $ly-brand-color-dark1;
+          color: $ly-brand-color-dark1;
+          .ly-icon-24:before {
+            padding: 0px;
+            background-color: $ly-neutral-color5;
+            color: $ly-brand-color-dark1;
+          }
+        }
+        :hover {
+          .ly-icon-24:before {
+            background-color: $ly-brand-color;
+          }
+        }
+      }
+    }
+  }
+  @media screen and(min-width: 768px) {
+    .ly-active:hover {
+      color: $ly-brand-color-dark1;
+      border-bottom: 3px solid $ly-brand-color-dark1;
+    }
+  }
+}
+.ly-x-login {
+  height: 104px;
+  .ly-login-item {
+    margin-top: 8px;
+    color: $ly-brand-color-dark1;
+    border-bottom: 3px solid $ly-brand-color-dark1;
+    padding-bottom: 20px;
+  }
+  @media screen and (min-width: 1024px) {
+    height: auto;
+    .ly-login-item {
+      padding-bottom: 5px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    height: auto;
+    .ly-locale {
+      margin-right: 30px;
+    }
+  }
+}
+.ly-item {
+  flex: 1;
+  cursor: pointer;
+  text-align: center;
+  border-bottom: 3px solid $ly-neutral-color5;
+  padding-top: 12px;
+  @media screen and (min-width: 1024px) {
+    flex: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 16px;
+  }
+  p {
+    visibility: hidden;
+    padding-bottom: 4px;
+    @media screen and (min-width: 1024px) {
+      margin-left: 6px;
+    }
+    @media screen and(min-width: 768px) {
+      visibility: visible;
+    }
+  }
+  a {
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+  }
+}
+.ly-item:hover {
+  border-bottom: 0;
+  .ly-icon-24:before {
+    padding: 12px;
+    background-color: $ly-neutral-color6;
+    border-radius: 50%;
+    color: $ly-brand-color-light1 !important;
+  }
+  @media screen and(min-width: 768px) {
+    color: $ly-brand-color-light1;
+    border-bottom: 3px solid $ly-brand-color-light1;
+    .ly-icon-24:before {
+      padding: 0px;
+      background-color: $ly-neutral-color5 !important;
+    }
+  }
+}
+.ly-welcome {
+  padding-top: 8px;
+  padding-bottom: 20px;
+  font-weight: 300;
+  font-size: 20px;
+}

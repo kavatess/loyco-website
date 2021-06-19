@@ -1,0 +1,202 @@
+@import 'scss/variables';
+.ly-create-absence-form {
+  .container {
+    padding-bottom: 20px;
+    .ly-form {
+      padding-left: 10px;
+      .ly-form-row {
+        padding: 6px;
+        mat-label {
+          margin-right: 5px;
+          padding: 4px;
+          line-height: 1.6em;
+          color: $ly-form-control-label-color;
+          font-size: 1rem;
+          font-weight: normal;
+          a:link {
+            text-decoration: none;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+        }
+        .required:before {
+          content: ' *';
+          color: $ly-brand-color-dark1;
+          margin: 0 10px 0 0;
+        }
+        .ly-remark {
+          font-weight: bold;
+          padding: 4px;
+          flex-basis: auto !important;
+        }
+        .ly-form-label {
+          text-align: right;
+          padding-right: 0;
+          vertical-align: middle;
+        }
+        .ly-form-input {
+          .ly-select-place-holder {
+            color: $ly-form-error-message-color;
+          }
+          ::ng-deep .mat-form-field-wrapper {
+            padding-bottom: 0px;
+            ::ng-deep .mat-form-field-flex {
+              border: 1px solid $ly-neutral-color7;
+              border-radius: 2px;
+              height: 2.25em;
+              line-height: 1.4em;
+              padding: 0px 5px;
+              width: 16em;
+              @media screen and (max-width: 367px) {
+                width: 12em;
+              }
+            }
+          }
+        }
+        .mat-radio-group {
+          padding: 6px;
+          .mat-radio-button {
+            padding-right: 20px;
+          }
+        }
+        ::ng-deep .mat-radio-label-content {
+          font-size: 1rem;
+          font-weight: normal;
+        }
+        ::ng-deep .mat-form-field {
+          ::ng-deep &-invalid {
+            ::ng-deep .mat-form-field-flex {
+              border: 1px solid $ly-form-error-message-color !important;
+            }
+          }
+          ::ng-deep &-underline {
+            position: relative;
+            bottom: auto;
+          }
+          ::ng-deep &-subscript-wrapper {
+            position: static;
+          }
+          ::ng-deep .mat-form-field-infix {
+            border: 0;
+          }
+        }
+      }
+      .ly-status-group {
+        position: relative;
+        .ly-spinner-saving,
+        .ly-icon-done {
+          margin-left: 10px;
+        }
+      }
+      .ly-done-massage {
+        text-align: center;
+        color: $ly-form-done-message-color;
+        padding-top: 16px;
+      }
+      .ly-error-message {
+        text-align: center;
+        color: $ly-form-error-message-color;
+        padding-top: 16px;
+      }
+      .ly-button-group {
+        justify-content: center;
+        align-items: center;
+        .ly-button {
+          margin: 5px;
+        }
+        ::ng-deep .mat-stroked-button.mat-primary {
+          color: $ly-brand-color;
+        }
+      }
+    }
+  }
+}
+
+::ng-deep mat-label,
+::ng-deep .mat-form-field,
+.mat-radio-group {
+  /* For IE browser */
+  flex-basis: auto !important;
+}
+
+::ng-deep .mat-select-panel mat-option.mat-option {
+  overflow: visible;
+  /* For IE browser */
+  line-height: inherit !important;
+  /* Rest of the world */
+  line-height: initial !important;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+::ng-deep .mat-option-text.mat-option-text {
+  white-space: normal;
+}
+
+::ng-deep .mat-tooltip {
+  color: $ly-black-color !important;
+  padding: 10px;
+  box-shadow: 1px 1px 5px 0 hsl(0deg 0% 0% / 40%);
+  border-width: 1px;
+  border-color: $ly-neutral-color9;
+  background-color: $ly-neutral-color2;
+  font-size: 14px;
+}
+::ng-deep .mat-tooltip-trigger {
+  @media screen and (max-width: 630px) {
+    margin-top: 20px;
+  }
+}
+
+::ng-deep .mat-form-field-subscript-wrapper {
+  margin-top: 0px;
+  ::ng-deep .mat-error {
+    font-size: 12px;
+    font-weight: 600;
+    font-style: italic;
+  }
+}
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-form-field-type-mat-select .mat-form-field-label {
+  padding-left: 5px;
+  font-style: italic;
+}
+
+::ng-deep .mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {
+  border-color: $ly-radio-outer-circle-color;
+}
+::ng-deep .mat-radio-button.mat-primary .mat-radio-inner-circle {
+  background-color: $ly-brand-color;
+}
+
+::ng-deep .mat-option-text {
+  color: $ly-brand-color-dark1;
+}
+
+::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: $ly-brand-color;
+}
+
+:host ::ng-deep .mat-radio-container {
+  height: 17px;
+  width: 17px;
+}
+:host ::ng-deep .mat-radio-outer-circle {
+  height: 17px;
+  width: 17px;
+}
+:host ::ng-deep .mat-radio-inner-circle {
+  height: 17px;
+  width: 17px;
+}
+:host ::ng-deep .mat-radio-button .mat-radio-ripple {
+  height: 20px; /*double of your required circle radius*/
+  width: 20px; /*double of your required circle radius*/
+  left: calc(50% - 10px); /*'10px'-same as your required circle radius*/
+  top: calc(50% - 10px); /*'10px'-same as your required circle radius*/
+}

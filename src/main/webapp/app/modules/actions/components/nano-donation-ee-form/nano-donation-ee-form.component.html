@@ -1,0 +1,80 @@
+<ly-component-layout class="ly-nano-donation-ee-form" [component]="this.self">
+    <span title-component *ngIf="dataLoaded">{{ (!nanoDonationSetupEE.NanoDonationTypeId || nanoDonationSetupEE.NanoDonationTypeId === '1') ? ('widget.nanoDonation.title' | i18n) : 'widget.nanoDonation.lastDonationTitle' | translate : { value: nanoDonationSetupEE.EffectiveDate | date : 'dd/MM/yyyy' } }}</span>
+    <div content-component>
+        <div class="container">
+            <div class="donation-intro">
+                {{ 'widget.nanoDonation.initialText' | i18n }}
+            </div>
+            <form [formGroup]="form" (ngSubmit)="onSubmit()" class="ly-form" #myFGD="ngForm">
+                <div fxLayout="column" fxLayout.gt-xs="row" class="ly-form-row">
+                    <mat-label class="required" fxFlex="35%" ngClass="ly-form-label" [ngClass.xs]="{'ly-form-label':false}">{{ 'widget.nanoDonation.fields.roundOffMySalary' | i18n}}
+                    <span class="ly-icon-24 ly-icon-info" style="font-size: 16px" title="{{'widget.nanoDonation.fields.roundOffMySalaryTooltip' | i18n}}"> </span>
+                    </mat-label>
+                    <mat-radio-group formControlName="roundDownMySalary" color="primary" class="ly-form-input" (change)="handleChangeRoundDownSalary($event)">
+                        <mat-radio-button value="1">Yes</mat-radio-button>
+                        <mat-radio-button value="0">No</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+                <div *ngIf="f.roundDownMySalary.value === '1'">
+                    <div fxLayout="column" fxLayout.gt-xs="row" class="ly-form-row">
+                        <mat-label class="required" fxFlex="35%" ngClass="ly-form-label" [ngClass.xs]="{'ly-form-label':false}">{{ 'widget.nanoDonation.fields.roundingType' | i18n}} </mat-label>
+                        <mat-radio-group formControlName="roundingType" color="primary" class="ly-form-input">
+                            <mat-radio-button value="2">{{'widget.nanoDonation.fields.roundingTypeLOV.theLowerFranc' | i18n}}</mat-radio-button>
+                            <div class="lower-type-small-text">{{'widget.nanoDonation.fields.roundingTypeLOV.theLowerFrancDesc' | i18n}}</div>
+                            <mat-radio-button value="3">{{'widget.nanoDonation.fields.roundingTypeLOV.theLowerTenFrancs' | i18n}}</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div fxLayout="column" fxLayout.gt-xs="row" class="ly-form-row">
+                        <mat-label class="required" fxFlex="35%" ngClass="ly-form-label" [ngClass.xs]="{'ly-form-label':false}">{{ 'widget.nanoDonation.fields.donationFoundationLabel' | i18n}} </mat-label>
+                        <mat-form-field class="ly-form-input" floatLabel="never">
+                            <mat-select formControlName="donationFoundationId" placeholder="{{ 'widget.nanoDonation.fields.chooseAnAssociation' | i18n}}" (selectionChange)="handleChangeNanoDonationFoundationLOV($event)">
+                            <mat-option *ngFor="let foundation of nanoDonationFoundationLOV" [value]="foundation.NanoDonationFoundationId">
+                                {{foundation.FoundationName}}
+                            </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="getErrorMessage('donationFoundationId')">{{getErrorMessage('donationFoundationId')}}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div fxLayout="column" fxLayout.gt-xs="row" class="ly-form-row">
+                        <mat-label fxFlex="35%" ngClass="ly-form-label" [ngClass.xs]="{'ly-form-label':false}">URL</mat-label>
+                        <mat-label class="ly-nano-detail"><a [href]="f.url?.value" target="_blank">{{f.url?.value}}</a></mat-label>
+                    </div>
+                    <div fxLayout="column" fxLayout.gt-xs="row" class="ly-form-row">
+                        <mat-label fxFlex="35%" ngClass="ly-form-label" [ngClass.xs]="{'ly-form-label':false}">{{ 'widget.nanoDonation.fields.foundationDescription' | i18n}}</mat-label>
+                        <mat-label fxFlex="65%" class="ly-nano-detail">{{f.description?.value}}</mat-label>
+                    </div>
+                    <div fxLayout="column" fxLayout.gt-xs="row" class="ly-form-row">
+                        <mat-label class="required" fxFlex="35%" ngClass="ly-form-label" [ngClass.xs]="{'ly-form-label':false}">{{ 'widget.nanoDonation.fields.shareEeInformationlabel' | i18n}}</mat-label>
+                        <mat-radio-group formControlName="shareEeInformation" color="primary" class="ly-form-input">
+                            <mat-radio-button value="1">Yes</mat-radio-button>
+                            <mat-radio-button value="0">No</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                </div>
+                <div fxLayout="row" *ngIf="!isFirstLoad && f.roundDownMySalary.value === '0'">
+                    <span fxFlex="100%" class="ly-warning-message">{{ 'widget.nanoDonation.warningMessage' | i18n }}</span>
+                </div>
+                <div fxLayout="row" class="ly-button-group">
+                    <button mat-stroked-button color="primary" type="submit" class="ly-button" [disabled]="isSavingProcess">
+                        <span ngClass="ly-icon-10 ly-icon-check"></span>
+                        <span>{{ hasData ? ('widget.button.modify' | i18n) : ('widget.button.submit' | i18n) }}</span>
+                    </button>
+                    <button mat-stroked-button color="primary" type="button" class="ly-button" (click)="onCancel()" [disabled]="isSavingProcess">
+                        <span ngClass="ly-icon-10 ly-icon-cancel"></span>
+                        <span>{{ 'widget.button.cancel' | i18n }}</span>
+                    </button>
+                    <div class="ly-status-group" [style.visibility]="(isSavingProcess || isDoneProcess || resultMessage) ? 'visible' : 'hidden'">
+                        <mat-spinner class="ly-spinner-saving" *ngIf="isSavingProcess" [diameter]="30"></mat-spinner>
+                        <div class="ly-icon-done" *ngIf="isDoneProcess"></div>
+                        <div class="ly-danger-icon" *ngIf="!isDoneProcess && resultMessage"></div>
+                    </div>
+                </div>
+                
+                <div fxLayout="row" *ngIf="resultMessage">
+                    <span fxFlex="100%" [ngClass]="isDoneProcess ? 'ly-done-message' : 'ly-error-message'">{{ resultMessage }}</span>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+</ly-component-layout>

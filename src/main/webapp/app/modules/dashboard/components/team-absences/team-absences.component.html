@@ -1,0 +1,16 @@
+<ly-component-layout class="ly-team-absences" [component]="this.self">
+    <!--title-->
+    <span title-component>{{ 'widget.teamAbsence.title' | i18n }}</span>
+    <!--content-->
+    <div content-component *ngIf="hasData" class="ly-background">
+        <div class="owl-carousel owl-theme" id="carousel-team-absences">
+            <div *ngFor="let item of data" class="ly-carousel-item">
+                <div class="ly-name-initials-avatar-container">
+                    <span class="ly-name-initials-avatar">{{ item.FirstName[0] }}{{ item.LastName[0] }}</span>
+                </div>
+                <ly-team-absences-info [data]="item"> </ly-team-absences-info>
+            </div>
+        </div>
+        <div class="ly-background-empty"></div>
+    </div>
+</ly-component-layout>

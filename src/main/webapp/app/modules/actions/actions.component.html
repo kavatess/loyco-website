@@ -1,0 +1,8 @@
+<ly-page-layout>
+  <div title-page>
+    <span class="ly-icon-24 ly-icon-action"></span>
+    <span class="ly-page-title">{{ 'tab.actions' | i18n }}</span>
+  </div>
+  <ly-create-absence-form content-page *ngIf="data.get('create-absence-form')"></ly-create-absence-form>
+  <ly-nano-donation-ee-form content-page *ngIf="data.get('nano-donation-ee-form')"></ly-nano-donation-ee-form>
+</ly-page-layout>

@@ -1,0 +1,8 @@
+<div *ngIf="visible">
+  <ly-header></ly-header>
+  <ly-password-popup></ly-password-popup>
+  <router-outlet></router-outlet>
+</div>
+<div *ngIf="!visible" class="ly-x-loading">
+  <img src="../content/images/loading.gif" alt="loading gif" />
+</div>

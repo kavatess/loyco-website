@@ -1,0 +1,19 @@
+<ly-component-layout [component]="this.self">
+    <!--title-->
+    <div title-component>{{ 'widget.timesheetTask.title' | i18n }}</div>
+    <!--content-->
+    <div content-component>
+        <div class="ly-timesheet-validation">
+            <span *ngIf=" timesheetNumber >= 0 " class="ly-validate-number"
+                [ngClass]=" !timesheetNumber ? 'ly-x-no-validate' : '' ">
+                {{ timesheetNumber }}
+            </span>
+            <span *ngIf=" timesheetNumber > 0 " class="text">
+                {{ 'widget.timesheetTask.message.hasTimesheetsToBeValidated' | i18n }}
+            </span>
+            <span *ngIf=" !timesheetNumber " class="text">
+                {{ 'widget.timesheetTask.message.noTimesheetToBeValidated' | i18n }}
+            </span>
+        </div>
+    </div>
+</ly-component-layout>

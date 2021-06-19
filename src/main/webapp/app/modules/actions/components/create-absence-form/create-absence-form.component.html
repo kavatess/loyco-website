@@ -1,0 +1,117 @@
+<ly-component-layout class="ly-form ly-create-absence-form" [component]="this.self">
+  <span title-component>{{ 'widget.createAbsence.title' | i18n }}</span>
+  <div content-component>
+    <div class="container">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="ly-form" #myFGD="ngForm">
+        <div fxLayout="column" fxLayout.gt-xs="row" class="ly-form-row">
+          <mat-label class="required" fxFlex="35%" ngClass="ly-form-label" [ngClass.xs]="{ 'ly-form-label': false }">
+            {{ 'widget.createAbsence.fields.absenceReasonLabel' | i18n }}
+          </mat-label>
+          <mat-form-field fxFlex="65%" class="ly-form-input" floatLabel="never">
+            <mat-select formControlName="absenceReasonId" (selectionChange)="absenceReasonChangeHandler($event)">
+              <mat-option *ngFor="let absenceReason of absenceReasons" [value]="absenceReason.AbsenceReasonId">
+                {{ absenceReason.AbscReasonDescription }}
+              </mat-option>
+            </mat-select>
+            <mat-error [innerHtml]="getErrorMessage('absenceReasonId')" *ngIf="getErrorMessage('absenceReasonId')"></mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="column" fxLayout.gt-xs="row" class="ly-form-row">
+          <mat-label fxFlex="35%" ngClass="ly-form-label" [ngClass.xs]="{ 'ly-form-label': false }">
+            {{ 'widget.createAbsence.fields.remarkLabel' | i18n }}
+          </mat-label>
+          <p fxFlex="65%" class="ly-remark" [innerHtml]="f.remark?.value"></p>
+        </div>
+        <div fxLayout="column" fxLayout.gt-xs="row" class="ly-form-row">
+          <mat-label class="required" fxFlex="35%" ngClass="ly-form-label" [ngClass.xs]="{ 'ly-form-label': false }">
+            {{ 'widget.createAbsence.fields.startDate' | i18n }}
+          </mat-label>
+          <mat-form-field fxFlex="65%" class="ly-form-input ly-date-picker" floatLabel="never">
+            <input
+              matInput
+              [matDatepicker]="startDatePicker"
+              formControlName="startDate"
+              (mousedown)="startDatePicker.open(); ($event.preventDefault)"
+              (dateChange)="startDateChangeHandler($event)"
+            />
+            <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #startDatePicker (closed)="form.get('startDate').markAsTouched()"></mat-datepicker>
+            <mat-error [innerHtml]="getErrorMessage('startDate')" *ngIf="getErrorMessage('startDate')"></mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="column" fxLayout.gt-xs="row" class="ly-form-row">
+          <mat-label class="required" fxFlex="35%" ngClass="ly-form-label" [ngClass.xs]="{ 'ly-form-label': false }"
+            >{{ 'widget.createAbsence.fields.dayTimesIdStart' | i18n }}
+          </mat-label>
+          <mat-radio-group fxFlex="65%" formControlName="dayTimesIdStart" color="primary" class="ly-form-input">
+            <mat-radio-button *ngFor="let dayTime of DAY_TIMES_ID_LOV" [value]="dayTime.value">
+              {{ dayTime.translationKey | i18n }}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div fxLayout="column" fxLayout.gt-xs="row" class="ly-form-row">
+          <mat-label class="required" fxFlex="35%" ngClass="ly-form-label" [ngClass.xs]="{ 'ly-form-label': false }">
+            {{ 'widget.createAbsence.fields.endDate' | i18n }}
+          </mat-label>
+          <mat-form-field fxFlex="65%" class="ly-form-input ly-date-picker" floatLabel="never">
+            <input
+              matInput
+              [matDatepicker]="endDatePicker"
+              formControlName="endDate"
+              (mousedown)="endDatePicker.open(); ($event.preventDefault)"
+            />
+            <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #endDatePicker (closed)="form.get('endDate').markAsTouched()"></mat-datepicker>
+            <mat-error [innerHtml]="getErrorMessage('endDate')" *ngIf="getErrorMessage('endDate')"></mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="column" fxLayout.gt-xs="row" class="ly-form-row">
+          <mat-label class="required" fxFlex="35%" ngClass="ly-form-label" [ngClass.xs]="{ 'ly-form-label': false }"
+            >{{ 'widget.createAbsence.fields.dayTimesIdEnd' | i18n }}
+          </mat-label>
+          <mat-radio-group fxFlex="65%" formControlName="dayTimesIdEnd" color="primary" class="ly-form-input">
+            <mat-radio-button *ngFor="let dayTime of DAY_TIMES_ID_LOV" [value]="dayTime.value">
+              {{ dayTime.translationKey | i18n }}
+            </mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div fxLayout="column" fxLayout.gt-xs="row" class="ly-form-row">
+          <mat-label
+            fxFlex="35%"
+            [ngClass]="['ly-form-label', requiredDescription ? 'required' : '']"
+            [ngClass.xs]="{ 'ly-form-label': false }"
+          >
+            {{ 'widget.createAbsence.fields.description' | i18n }}
+          </mat-label>
+          <mat-form-field class="ly-form-input" floatLabel="never">
+            <input matInput formControlName="description" maxlength="250" (focus)="tooltip.show()" />
+            <div
+              matTooltipPosition="right"
+              matTooltip="{{ 'tooltip.validation.maxLength' | translate: { value: 250 } }}"
+              #tooltip="matTooltip"
+            ></div>
+            <mat-error [innerHtml]="getErrorMessage('description')" *ngIf="getErrorMessage('description')"></mat-error>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row" class="ly-button-group">
+          <button mat-stroked-button color="primary" type="submit" class="ly-button" [disabled]="isSavingProcess">
+            <span ngClass="ly-icon-10 ly-icon-check"></span>
+            <span>{{ 'widget.button.submit' | i18n }}</span>
+          </button>
+          <button mat-stroked-button color="primary" type="button" class="ly-button" (click)="onCancel()" [disabled]="isSavingProcess">
+            <span ngClass="ly-icon-10 ly-icon-cancel"></span>
+            <span>{{ 'widget.button.cancel' | i18n }}</span>
+          </button>
+          <div class="ly-status-group">
+            <mat-spinner class="ly-spinner-saving" *ngIf="isSavingProcess" [diameter]="30"></mat-spinner>
+            <div class="ly-icon-done" *ngIf="isDoneProcess"></div>
+            <div class="ly-danger-icon" *ngIf="!isDoneProcess && resultMessage"></div>
+          </div>
+        </div>
+        <div fxLayout="row" *ngIf="resultMessage">
+          <span fxFlex="100%" [ngClass]="isDoneProcess ? 'ly-done-massage' : 'ly-error-message'">{{ resultMessage }}</span>
+        </div>
+      </form>
+    </div>
+  </div>
+</ly-component-layout>

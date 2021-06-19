@@ -1,0 +1,15 @@
+.ly-absences-to-be-validated {
+  .ly-content-body {
+    margin: 10px 0px 15px 0px;
+    text-align: center;
+    .ly-validate-number {
+      font-size: 40px;
+      font-weight: bold;
+      display: block;
+      color: #cc0000;
+    }
+    .ly-x-no-validate {
+      color: #009900 !important;
+    }
+  }
+}

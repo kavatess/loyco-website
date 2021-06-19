@@ -1,0 +1,10 @@
+<div class="ly-team-absences-info">
+    <div id="name">{{ data.FirstName }} {{ data.LastName }}</div>
+    <div>
+        {{ (isFullTime ? 'widget.teamAbsence.fullTime' : 'widget.teamAbsence.partialTime') | translate: { value: data.Fte * 100 } }}
+    </div>
+    <div>{{ data.AbsenceReasons }}</div>
+    <div *ngIf="data.IncapacityRate">
+        {{ 'widget.teamAbsence.incapacityRate' | translate: { value: data.IncapacityRate } }}</div>
+    <div>{{ data.ExpectedReturnDate | dateStringFromNow:data.ExpectedReturnTime:data.ContractEndDate }}</div>
+</div>

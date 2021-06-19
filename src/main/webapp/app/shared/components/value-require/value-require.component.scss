@@ -1,0 +1,28 @@
+@import 'scss/variables';
+.ly-error-alert {
+  width: 228px;
+  height: 40px;
+  background-color: #fcf3f4;
+  border-color: #f8d3d6;
+  padding: 10px;
+  border-style: solid;
+  border-width: 0 1px 1px 1px;
+  margin-top: 0;
+  border-top-width: 0;
+  border-radius: 0;
+  padding: 10px;
+  display: inline-flex;
+  .ly-error-descripiton {
+    padding-left: 10px;
+    .ly-error-name {
+      height: 100%;
+      max-height: 18px;
+      color: black;
+      font-weight: 600;
+      padding-bottom: 5px;
+    }
+    .ly-error-instructions {
+      color: $ly-icon-color;
+    }
+  }
+}

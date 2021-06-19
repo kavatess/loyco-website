@@ -1,0 +1,20 @@
+<div class="preview-dialog-component">
+    <div class="preview-popup-body">
+        <h3>{{ data.title | translate: { value: data.filename } }}</h3>
+        <div class="preview-popup-content">
+            <div *ngIf="!isLoadDone;else preview_content">
+                <mat-progress-bar mode="indeterminate" value="40"></mat-progress-bar>
+            </div>
+            <ng-template #preview_content>
+                <div mat-dialog-content class="preview-dialog-content">
+                    <ng2-pdfjs-viewer [pdfSrc]="content"></ng2-pdfjs-viewer>
+                </div>
+            </ng-template>
+        </div>
+        <div class="preview-popup-footer">
+            <div mat-dialog-actions>
+                <button mat-stroked-button mat-dialog-close>{{ 'widget.button.close' | i18n }}</button>
+            </div>
+        </div>
+    </div>
+</div>

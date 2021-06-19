@@ -1,0 +1,69 @@
+<ly-component-layout class="ly-next-absences" [component]="this.self">
+  <!--title-->
+  <span title-component>{{ 'widget.myNextAbsences.title' | i18n }}</span>
+  <div *ngIf="hasData" content-component class="ly-next-absence-content">
+    <!-- absence table displayed when width > 768px-->
+    <table class="ly-x-lg-widget-container" id="next-absences-tbl">
+      <thead>
+        <tr>
+          <td *ngFor="let title of titleList">{{ title }}</td>
+        </tr>
+      </thead>
+      <tbody *ngFor="let absence of data">
+        <tr>
+          <td>
+            <strong>{{ absence.AbsenceReasonI18n | i18n }}</strong>
+          </td>
+          <td>
+            <strong>
+              <span>{{ absence.StartDate | date: 'dd/MM/yyyy' }}</span>
+              <span *ngIf="absence.DisplayHours">{{ absence.StartDate | date : 'HH:mm' }}</span>
+            </strong>
+            <p>{{ absence.DayTimesStartI18n }}</p>
+          </td>
+          <td>
+            <strong>
+              <span>{{ absence.EndDate | date: 'dd/MM/yyyy' }}</span>
+              <span *ngIf="absence.DisplayHours">{{ absence.EndDate | date : 'HH:mm' }}</span>
+            </strong>
+            <p>{{ absence.DayTimesEndI18n }}</p>
+          </td>
+          <td>
+            <strong>{{ absence.AbsenceStatusI18n }}</strong>
+          </td>
+          <td>
+            <strong>{{ absence.AbsDuration }}</strong>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+    <!-- carousel is on when width < 768px  -->
+    <div class="owl-carousel owl-theme ly-x-sm-widget-container" id="absence-data-carousel">
+      <div class="ly-card" *ngFor="let absence of data">
+        <div class="ly-card-column-header">
+          <div *ngFor="let title of titleList">{{ title }}</div>
+        </div>
+        <div class="ly-card-column-content">
+          <strong>{{ absence.AbsenceReasonI18n }}</strong>
+          <span>
+            <strong>
+              <span>{{ absence.StartDate | date: 'dd/MM/yyyy' }}</span>
+              <span *ngIf="absence.DisplayHours">{{ absence.StartDate | date : 'HH:mm' }}</span>
+            </strong>
+            <p>{{ absence.DayTimesStartI18n }}</p>
+          </span>
+          <span>
+            <strong>
+              <span>{{ absence.EndDate | date: 'dd/MM/yyyy' }}</span>
+              <span *ngIf="absence.DisplayHours">{{ absence.EndDate | date : 'HH:mm' }}</span>
+            </strong>
+            <p>{{ absence.DayTimesEndI18n }}</p>
+          </span>
+          <strong>{{ absence.AbsenceStatusI18n }}</strong>
+          <strong>{{ absence.AbsDuration }}</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</ly-component-layout>

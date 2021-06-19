@@ -1,0 +1,68 @@
+<div class="ly-header" [ngClass]="!hasLogin ? 'ly-x-login' : ''">
+  <div class="ly-container ly-center-position">
+    <div class="ly-logo-center">
+      <div class="ly-menu">
+        <div class="ly-icon-company"></div>
+        <ly-drop-down [data]="appData" class="ly-list-app" *ngIf="hasLogin" (selected)="chooseApp($event)">
+        </ly-drop-down>
+      </div>
+    </div>
+
+    <div class="ly-middle-section">
+      <ly-application-list-carousel [appData]="appData" (clickedApp)="chooseApp($event)"></ly-application-list-carousel>
+    </div>
+
+    <div class="ly-right-section">
+      <div class="ly-tool-bar">
+        <div class="ly-menu">
+          <div class="ly-icon-company"></div>
+          <ly-drop-down [data]="appData" class="ly-list-app" *ngIf="hasLogin" (selected)="chooseApp($event)">
+          </ly-drop-down>
+        </div>
+        <ly-drop-down *ngIf="!isForce()" [data]="languageData" class="ly-locale" (selected)="changeLocale($event)">
+        </ly-drop-down>
+        <!-- <div *ngIf="isForce()" class="ly-locale-force ly-locale">
+          <div [ngClass]="this.languageData.label.class"></div>
+          <span class="fa fa-sort-down"></span>
+        </div>
+        <ly-drop-down [data]="userData" [userOption]="true" *ngIf="hasLogin" (selected)="chooseUserOption($event)"></ly-drop-down> -->
+      </div>
+      <!-- <div class="ly-list-page" *ngIf="hasLogin">
+        <div class="ly-item nav-all" [routerLink]="[getEnumString('all')]" routerLinkActive="ly-active">
+          <div class="ly-icon-24 ly-icon-all"></div>
+          <p>{{ titleData.all }}</p>
+        </div>
+        <div class="ly-divider"></div>
+        <div class="ly-item" [routerLink]="[getEnumString('dashboard')]" routerLinkActive="ly-active">
+          <div class="ly-icon-24 ly-icon-chart"></div>
+          <p>{{ titleData.dashboard }}</p>
+        </div>
+        <div class="ly-divider"></div>
+        <div class="ly-item" [routerLink]="[getEnumString('actions')]" routerLinkActive="ly-active">
+          <div class="ly-icon-24 ly-icon-action"></div>
+          <p>{{ titleData.actions }}</p>
+        </div>
+        <div class="ly-divider"></div>
+        <div class="ly-item" [routerLink]="[getEnumString('applications')]" routerLinkActive="ly-active">
+          <div class="ly-icon-24 ly-icon-application"></div>
+          <p>{{ titleData.applications }}</p>
+        </div>
+        <div class="ly-divider"></div>
+        <div class="ly-item" [routerLink]="[getEnumString('favorites')]" routerLinkActive="ly-active">
+          <div class="ly-icon-24 ly-icon-star"></div>
+          <p>{{ titleData.favorites }}</p>
+        </div>
+      </div>
+      <div class="list-page" *ngIf="!hasLogin">
+        <div class="ly-item ly-login-item" [routerLink]="[getEnumString('login')]" routerLinkActive="ly-active">
+          <span>{{ titleData.login }}</span>
+        </div>
+      </div>
+    </div> -->
+    </div>
+  </div>
+  <div *ngIf="hasLogin">
+    <br />
+    <h3 [innerHTML]="'welcome' | translate: { value: userDetails.displayName }" class="ly-welcome ly-center-position">
+    </h3>
+  </div>

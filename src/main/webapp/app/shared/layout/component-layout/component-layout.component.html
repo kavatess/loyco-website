@@ -1,0 +1,29 @@
+<div class="ly-container" [ngStyle]="chooseSize()" *ngIf="visible">
+  <!-- favorite star -->
+  <button class="ly-favorite-star" (click)="onClickFavoriteStar()">
+    <span [ngClass]="favorited ? 'fas' : 'far'" class="fa-star ly-icon"></span>
+  </button>
+
+  <!-- receive title of component -->
+  <div class="ly-component-title">
+    <ng-content select="[title-component]"></ng-content>
+  </div>
+
+  <!-- circle loading -->
+  <div *ngIf="!this.component.dataLoaded" class="uploader-status margin-spinner ly-x-circle-loading">
+    <mat-spinner diameter="80"></mat-spinner>
+  </div>
+
+  <!-- content displayed when data ready -->
+  <div *ngIf="this.component.dataLoaded" class="ly-component-body">
+    <ng-content select="[content-component]"></ng-content>
+  </div>
+  <!--content no data-->
+  <div *ngIf="this.component.dataLoaded && !this.component.hasData" class="ly-component-no-data">
+    <span>{{ this.component.getNoDataMessage() | i18n }}</span>
+  </div>
+  <!-- view more button -->
+  <button (click)="this.component.onClickViewMore()" class="ly-component-footer-btn" *ngIf="!!this.component.getViewMoreLink()">
+    <span>{{ this.component.getViewMoreMessage() | i18n }}</span>
+  </button>
+</div>

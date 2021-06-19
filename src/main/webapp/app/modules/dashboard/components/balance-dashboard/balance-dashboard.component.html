@@ -1,0 +1,28 @@
+<ly-component-layout class="ly-balance" [component]="this.self">
+  <!--title-->
+  <span title-component class="title-component">{{ listTitle[0] || ('widget.balance.title' | i18n) }}</span>
+  <!--content-->
+  <div content-component class="ly-background" *ngIf="hasData && screenSize !== 2">
+    <div class="owl-carousel owl-theme" id="carousel-dashboard-balance">
+      <div *ngFor="let item of listCirclePercent">
+        <ly-balance-item [data]="item"> </ly-balance-item>
+      </div>
+    </div>
+    <div class="ly-background-white" *ngIf="hide"></div>
+  </div>
+
+  <div content-component class="ly-background" *ngIf="hasData && screenSize == 2">
+    <div class="owl-carousel owl-theme" id="carousel-dashboard-balance">
+      <div *ngFor="let item of listCirclePercent[0].listItem" class="ly-carousel-small">
+        <ly-progress-circle [data]="item.percent">
+          <span title-circle>{{ item.typeBalance | i18n }}</span>
+          <span content-circle-number class="ly-content-circle-number">
+            {{ item.countDay }}
+          </span>
+          <p content-circle-type class="ly-content-circle-type">{{ listCirclePercent[0].durationType }}</p>
+        </ly-progress-circle>
+      </div>
+    </div>
+    <div class="ly-background-white" *ngIf="hide"></div>
+  </div>
+</ly-component-layout>

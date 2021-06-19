@@ -1,0 +1,23 @@
+<div class="ly-center-position ly-login-form">
+  <form #user="ngForm">
+    <div class="ly-form-group">
+      <div class="ly-label" for="username">{{ 'login.username' | i18n }} <span class="ly-require-icon">&#42;</span>
+      </div>
+      <input type="text" name="username" class="form-control ly-username-input" id="username" required
+        [(ngModel)]="user_name" #username="ngModel"
+        [ngClass]="(error || !username.pristine) && !username.valid ? 'ly-error' : ''" />
+      <br />
+      <ly-value-require *ngIf="(error || !username.pristine) && !username.valid"></ly-value-require>
+    </div>
+    <div class="ly-form-group">
+      <div class="ly-label" for="password">{{ 'login.password' | i18n }} <span class="ly-require-icon">&#42;</span>
+      </div>
+      <input type="password" name="password" class="form-control ly-password-input" id="password" required
+        [(ngModel)]="pass_word" #password="ngModel"
+        [ngClass]="(error || !password.pristine) && !password.valid ? 'ly-error' : ''" />
+      <br />
+      <ly-value-require *ngIf="(error || !password.pristine) && !password.valid"></ly-value-require>
+    </div>
+  </form>
+  <button [disabled]="this.btnClicked" class="ly-login-button" (click)="login()">{{ 'login.signin' | i18n }}</button>
+</div>

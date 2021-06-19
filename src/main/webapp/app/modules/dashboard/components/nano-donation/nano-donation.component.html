@@ -1,0 +1,9 @@
+<ly-component-layout [component]="this.self">
+  <!--title-->
+  <div title-component>{{ 'widget.nanoDonation.myNanoDonationTitle' | i18n }}</div>
+  <div content-component *ngIf="hasData">
+    <div class="ly-nano-donation-item" *ngFor="let item of data; let first = first" [ngClass]="{ 'ly-first-item': first }">
+      <ly-nano-donation-item [data]="item"></ly-nano-donation-item>
+    </div>
+  </div>
+</ly-component-layout>

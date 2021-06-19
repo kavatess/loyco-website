@@ -1,0 +1,16 @@
+.owl-carousel {
+    .ly-app-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .ly-text {
+            text-align: center;
+        }
+        .ly-app-icon-small,
+        .ly-text {
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,266 @@
+{
+  "app": {
+    "absences": {
+      "name": "Abwesenheiten",
+      "description": "Verwaltung der geplanten und ungeplanten Abwesenheiten"
+    },
+    "activities": {
+      "name": "Aktivitäten",
+      "description": "Verwaltung der Ausser-Lehrplan-Aktivitäten"
+    },
+    "analytics": {
+      "name": "Analytics",
+      "description": "Schlüsselindikator HR"
+    },
+    "dropfile": {
+      "name": "Dropfile",
+      "description": "Gesichertes Datenaustauschportal für vertrauliche Dokumente"
+    },
+    "dropfile_deloitte": {
+      "name": "Dropfile (Deloitte)",
+      "description": "Gesichertes Datenaustauschportal für vertrauliche Dokumente"
+    },
+    "finance": {
+      "name": "Finanzen",
+      "description": "Konsultieren Sie die Finanzdaten Ihres Unternehmens"
+    },
+    "fleet": {
+      "name": "Fleet",
+      "description": "Verwaltung der Fahrzeugflotten und Verwaltung der bezüglichen Schadenfällen"
+    },
+    "form": {
+      "error": {
+        "required": "Wert ist erforderlich.",
+        "startBeforeEnd": "Das Anfangdatum muss vor dem Enddatum sein.",
+        "invalidFormatDate": "Der angegebene Wert hat nicht das erwartete Datumsformat.<br/>Geben Sie einen Wert in diesem Format ein: '29/11/1998'."
+      }
+    },
+    "hra": {
+      "name": "Personalverwaltung",
+      "description": "Verwaltungsprozess der Angestellten"
+    },
+    "identity_admin": {
+      "name": "Identity",
+      "description": "Verwaltung der Zugriffen zu Loyapps"
+    },
+    "loyins": {
+      "name": "Versicherungen",
+      "description": "Inventur des Versicherungen-Portfolio"
+    },
+    "mf": {
+      "name": "M-Files Ablage",
+      "description": "Verwaltung Ihrer Dokumente"
+    },
+    "payslips": {
+      "name": "Lohnabrechnung",
+      "description": "Zugriff zu den Lohnzettel und Lohnausweisen"
+    },
+    "psft_employee": {
+      "name": "Meine persönlichen Daten",
+      "description": "Konsultierung oder Aktualisierung Ihrer persönlichen Daten"
+    },
+    "psft_hr": {
+      "name": "Meine Firma",
+      "description": "Konsultierung oder Aktualisierung der Daten Ihrer Mitarbeiter"
+    },
+    "psft_manager": {
+      "name": "Mein Team",
+      "description": "Konsultierung oder Aktualisierung der Daten Ihres Teams"
+    }
+  },
+  "boolean": {
+    "yes": "Ja",
+    "no": "Nein"
+  },
+  "error": {
+    "errorCodeMessage": "Ein Fehler ist aufgetreten ({{value}}) Bitte versuchen Sie es erneut und falls es immer noch nicht funktionniert, kontaktieren Sie bitte Ihr Loyco Team.",
+    "messageFormatValidator": {
+      "messageSummary": "'{{value}}' besitzt nicht das erwartete Datumsformat.",
+      "messageDetail": "Geben Sie einen Wert im gleichen Format ein wie in diesem Beispiel: '29/11/1998'."
+    }
+  },
+  "tooltip": {
+    "validation": {
+      "maxLength": "Geben Sie {{value}} oder weniger Zeichen ein."
+    }
+  },
+  "lang": {
+    "en": "English",
+    "fr": "Français",
+    "de": "Deutsch"
+  },
+  "login": {
+    "password": "Passwort",
+    "signin": "Anmelden",
+    "username": "Benutzername",
+    "errorTitle": "Wert ist erforderlich.",
+    "errorContent": "Geben Sie einen Wert ein."
+  },
+  "menu": {
+    "changePassword": "Passwortänderung",
+    "logout": "Abmelden"
+  },
+  "popup": {
+    "initialPwdNotChanged": {
+      "content": "Ihr Password wurde noch nie geändert. Sie können es ab sofort ändern, bitte klicken Sie"
+    },
+    "currentPwdExpiredIn35Days": {
+      "content": "Ihr Passwort läuft am {{value}} ab. Sie können es ab sofort ändern, bitte klicken Sie"
+    },
+    "password": {
+      "link": "hier",
+      "title": "Password"
+    },
+    "warning": "ALARM"
+  },
+  "tab": {
+    "actions": "Aktionen",
+    "all": "Alle",
+    "applications": "Anwendungen",
+    "dashboard": "Dashboard",
+    "favorites": "Favoriten",
+    "login": "Login",
+    "profiles": "Profile"
+  },
+  "welcome": "Guten Tag {{value}}, schön Sie wieder zu sehen",
+  "widget": {
+    "myNextAbsences": {
+      "columns": {
+        "reason": "Art",
+        "startDate": "Anfangsdatum",
+        "endDate": "Enddatum",
+        "status": "Status",
+        "durationInDays": "Dauer in Tage"
+      },
+      "title": "Meine nächsten Abwesenheiten",
+      "message": {
+        "noData": "Keine geplante Abwesenheit... vielleicht ist es Zeit Ferien zu planen?!"
+      }
+    },
+    "createAbsence": {
+      "fields": {
+        "dayTimesIdEnd": "Zeitpunkt Ende",
+        "dayTimesIdStart": "Zeitpunkt Beginn",
+        "description": "Beschreibung",
+        "durationInDays": "Dauer in Tage",
+        "endDate": "Enddatum",
+        "absenceReasonLabel": "Art",
+        "remarkLabel": "Bemerkung",
+        "startDate": "Anfangsdatum",
+        "dayTimesIdLOV": {
+          "morning": "Morgen",
+          "midday": "Mittag",
+          "evening": "Abend"
+        }
+      },
+      "more": "Mehr erreichen",
+      "title": "Abwesenheit erstellen"
+    },
+    "nanoDonation": {
+      "fields": {
+        "roundOffMySalary": "Meinen Lohn runden",
+        "roundOffMySalaryTooltip": "Die Auszahlung Ihrer Spende erfolgt im nächsten Lohnlauf und wird auf dieselbe Art eingestellt.",
+        "roundingType": "Rundungsart",
+        "roundingTypeLOV": {
+          "notRound": "Nicht runden",
+          "theLowerFranc": "Zum tieferen Franken",
+          "theLowerFrancDesc": "Bedeutet ungefähr 10.- CHF pro Jahr.",
+          "theLowerTenFrancs": "Zu den tieferen 10 Franken"
+        },
+        "donationFoundationLabel": "Für die Organisation",
+        "chooseAnAssociation": "-- Wählen Sie eine Organisation",
+        "foundationDescription": "Beschreibung",
+        "shareEeInformationlabel": "Ich akzeptiere die Weiterleitung meines Namens, Vornamens, meiner Post- und E-Mail Adresse an die unterstützende Organisation um regelmässig über ihre Aktivitäten informiert zu werden und um Ende Jahr eine Spendebestätigung zu erstellen."
+      },
+      "title": "Machen Sie eine Spende!",
+      "lastDonationTitle": "Ihre Spende! (seit dem {{value}})",
+      "initialText": "Weil jede Aktion zählt, bietet Ihnen Ihr Arbeitgeber eine einfache Methode an Aktionen mit grossem gesellschaftlichen Einfluss teilzunehmen. Runden Sie einfach Ihren Lohn und die Sache ist geritzt.",
+      "successMessage": "Vielen Dank für Ihre Unterstützung der Organisation {{value}}.",
+      "warningMessage": "Sind Sie sicher, dass Sie Ihre Spende stoppen wollen?",
+      "myNanoDonationTitle": "Meine Nanospenden",
+      "noNanoDonationData": "Keine Beiträge im Moment... Sie können die Nanospenden jederzeit aktivieren!",
+      "minPaymentDate": "Seit dem <b>{{value}}</b>, spendeten Sie:",
+      "totalDonationAmount": "CHF {{value}}",
+      "foundationName": "an die Organisation <b>{{value}}</b>."
+    },
+    "balance": {
+      "gauge": {
+        "title": {
+          "carryOver": "Übertrag",
+          "contractualRight": "Vertraglicher Urlaubsanspruch",
+          "todaysBalance": "Heutiger Saldo",
+          "finalBalance": "Endgültiges Saldo"
+        }
+      },
+      "title": "Urlaub",
+      "message": {
+        "noData": "Ups... wir finden nichts zum Anzeigen! Es handelt sich vermutlich um einen Fehler."
+      }
+    },
+    "teamAbsence": {
+      "fullTime": "Vollzeit ({{value}}%)",
+      "incapacityRate": "Abwesend: {{value}}% Erwerbsunfähigkeit",
+      "partialTime": "Teilzeit ({{value}}%)",
+      "title": "Wer ist heute abwesend?",
+      "dayTimesId": {
+        "1": "Morgen",
+        "2": "Mittag"
+      },
+      "expectedReturn": {
+        "label": "Zurück: ",
+        "empty": "Undefiniert",
+        "today": "Heute ({{value}})",
+        "tomorrow": "Morgen ({{value}})",
+        "inWeek": "In {{value}} Tagen",
+        "nextWeek": "{{value}} Nächste Woche"
+      },
+      "message": {
+        "noData": "Wow... das ganze Team arbeitet heute!"
+      }
+    },
+    "favorites": {
+      "message": {
+        "noData": "Ups... kein Favorit definiert! Bitte klicken Sie einfach auf den Stern Ihrer favoriten Fensters."
+      }
+    },
+    "absenceTask": {
+      "message": {
+        "hasAbsencesToBeValidated": "Bitte denken Sie daran diese zu bestätigen.",
+        "noAbsencesToBeValidated": "Perfekt, es gibt nichts zu machen!",
+        "noData": "Ups... wir finden nichts zum Anzeigen! Es handelt sich vermutlich um einen Fehler."
+      },
+      "title": "Abwesenheit validieren"
+    },
+    "myLastPayslips": {
+      "title": "Meine letzten 3 Lohnabrechnungen",
+      "paymentDate": "Datum",
+      "description": "Beschreibung",
+      "download": "Download",
+      "preview": "Vorschau",
+      "message": {
+        "noData": "Kein Dokument im Moment... kommen Sie in ein paar Tagen wieder!"
+      }
+    },
+    "timesheetTask": {
+      "message": {
+        "hasTimesheetsToBeValidated": "Bitte denken Sie daran diese zu bestätigen.",
+        "noTimesheetToBeValidated": "Perfekt, es gibt nichts zu machen!",
+        "noData": "Ups... wir finden nichts zum Anzeigen! Es handelt sich vermutlich um einen Fehler."
+      },
+      "title": "Zeiterfassung validieren"
+    },
+    "button": {
+      "save": "Speichern",
+      "cancel": "Annullieren",
+      "submit": "Einreichen",
+      "modify": "Ändern",
+      "close": "Fermer"
+    },
+    "more": "Mehr sehen",
+    "previewPopup": {
+      "viewPayslip": {
+        "title": "Lohnabrechnungen ansehen: {{value}}"
+      }
+    }
+  }
+}

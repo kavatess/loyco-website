@@ -1,0 +1,191 @@
+@import 'scss/variables';
+.ly-nano-donation-ee-form {
+  .container {
+    .donation-intro {
+      text-align: left;
+      margin-bottom: 16px;
+    }
+    .ly-form {
+      padding-left: 10px;
+      .ly-form-row {
+        padding-bottom: 15px;
+        mat-label {
+          margin-right: 5px;
+          padding: 4px;
+          line-height: 1.6em;
+          color: $ly-form-control-label-color;
+          font-size: 1rem;
+          font-weight: normal;
+          a:link {
+            text-decoration: none;
+          }
+          a:hover {
+            text-decoration: underline;
+          }
+        }
+        .required:before {
+          content: ' *';
+          color: $ly-form-required-label-color;
+          margin: 0 10px 0 0;
+        }
+        .ly-nano-detail {
+          text-align: left;
+          padding-left: 10px;
+        }
+        .ly-form-label {
+          text-align: right;
+          padding-right: 0;
+        }
+        .ly-form-input {
+          padding: 5px 15px 0px 10px;
+          .ly-select-place-holder {
+            color: $ly-form-required-label-color;
+          }
+        }
+        .mat-radio-group {
+          .mat-radio-button {
+            padding-right: 20px;
+          }
+        }
+        .mat-select {
+          border: 1px solid $ly-neutral-color7;
+          border-radius: 2px;
+          height: 2.25em;
+          line-height: 2.25em;
+          padding-left: 5px;
+          width: 16em;
+          @media screen and (max-width: 367px) {
+            width: 12em;
+          }
+        }
+        ::ng-deep .mat-radio-label-content {
+          font-size: 1rem;
+          font-weight: normal;
+        }
+        .lower-type-small-text {
+          margin: 0px 0px 10px 2.25em;
+          font-size: 12px;
+          color: darkgray;
+        }
+        .mat-form-field {
+          height: 3em;
+          line-height: 3em;
+          margin: -15px 0px 10px 0px;
+          ::ng-deep .mat-form-field-infix {
+            border: 0;
+          }
+        }
+      }
+      .ly-status-group {
+        position: relative;
+        .ly-spinner-saving,
+        .ly-icon-done {
+          margin-left: 10px;
+        }
+        @media screen and (min-width: 767px) {
+          .ly-spinner-saving {
+            position: absolute;
+            top: -40px;
+            left: 67%;
+          }
+          .ly-icon-done,
+          .ly-danger-icon {
+            position: absolute;
+            top: -35px;
+            left: 67%;
+          }
+        }
+      }
+
+      .ly-warning-message {
+        text-align: center;
+        color: $ly-form-warning-message-color;
+        margin-bottom: 20px;
+      }
+      .ly-done-message {
+        text-align: center;
+        color: $ly-form-done-message-color;
+        padding-top: 16px;
+      }
+      .ly-error-message {
+        text-align: center;
+        color: $ly-form-error-message-color;
+        padding-top: 16px;
+      }
+      .ly-button-group {
+        justify-content: center;
+        align-items: center;
+        .ly-button {
+          margin: 5px;
+        }
+        ::ng-deep .mat-stroked-button.mat-primary {
+          color: $ly-brand-color;
+        }
+        @media screen and (max-width: 320px) {
+          ::ng-deep .mat-button-wrapper {
+            margin-left: -10px;
+          }
+        }
+      }
+    }
+  }
+}
+:host ::ng-deep .mat-form-field-subscript-wrapper {
+  margin: -5px 0 0 5px !important;
+  ::ng-deep .mat-error {
+    height: 20px;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    font-style: italic;
+  }
+}
+
+:host ::ng-deep mat-label {
+  flex-basis: auto !important;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+}
+
+::ng-deep .mat-form-field-type-mat-select .mat-form-field-label {
+  padding-left: 5px;
+  font-style: italic;
+}
+
+::ng-deep .mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {
+  border-color: rgba(0, 0, 0, 0.54);
+}
+
+::ng-deep .mat-radio-button.mat-primary .mat-radio-inner-circle {
+  background-color: $ly-brand-color;
+}
+
+::ng-deep .mat-option-text {
+  color: $ly-brand-color-dark1;
+}
+
+::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: $ly-brand-color;
+}
+
+:host ::ng-deep .mat-radio-container {
+  height: 17px;
+  width: 17px;
+}
+:host ::ng-deep .mat-radio-outer-circle {
+  height: 17px;
+  width: 17px;
+}
+:host ::ng-deep .mat-radio-inner-circle {
+  height: 17px;
+  width: 17px;
+}
+:host ::ng-deep .mat-radio-button .mat-radio-ripple {
+  height: 20px; /*double of your required circle radius*/
+  width: 20px; /*double of your required circle radius*/
+  left: calc(50% - 10px); /*'10px'-same as your required circle radius*/
+  top: calc(50% - 10px); /*'10px'-same as your required circle radius*/
+}

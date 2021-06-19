@@ -1,0 +1,524 @@
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+.content-circle {
+  span {
+    font-size: 1.5em;
+  }
+  p {
+    font-size: 0.975em;
+    font-weight: bold;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  min-width: 350px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.875em;
+}
+
+@import '../css/deeppurple-amber.css';
+@import '../css/owl.carousel.min.css';
+@import '../css/owl.theme.default.min.css';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+@import '~ngx-toastr/toastr.css';
+@import './variables';
+
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.woff');
+  src: url('../fonts/icomoon.woff') format('embedded-opentype'), url('../fonts/icomoon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AppFont';
+  src: url('../fonts/App_iconfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (max-width: 768px) {
+  .ly-x-lg-widget-container {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .ly-x-sm-widget-container {
+    display: none !important;
+  }
+}
+
+.ly-icon-company {
+  width: 108px;
+  height: 40px;
+  background-image: url(../images/Sprites.png);
+  background-size: 3600px;
+  background-position: -3392px 2px;
+  margin-top: 2px;
+}
+
+.ly-language {
+  width: 30px;
+  height: 20px;
+  background-image: url(../images/Sprites.png);
+  background-repeat: no-repeat;
+  top: 10px;
+  transform: none;
+}
+
+.ly-language-en {
+  background-position: -14705px 0;
+}
+
+.ly-language-de {
+  background-position: -14624px 0;
+}
+
+.ly-language-fr {
+  background-position: -14665px 0;
+}
+
+.ly-icon-24 {
+  font-family: 'AppFont', 'icomoon';
+  font-size: 24px;
+}
+
+.ly-icon-10 {
+  font-family: 'AppFont', 'icomoon';
+  font-size: 10px;
+}
+
+.ly-icon-action:before {
+  content: '\e100';
+}
+
+.ly-people-icon-24:before {
+  content: '\e902';
+}
+
+.ly-fire-icon-24:before {
+  content: '\e908';
+}
+
+.ly-info-icon-24:before {
+  content: '\e900';
+}
+
+.ly-icon-chart:before {
+  content: '\e903';
+}
+
+.ly-icon-fill_star:before {
+  content: '\e9c4';
+  color: #efce4a;
+}
+
+.ly-icon-star:before {
+  content: '\e103';
+}
+
+.ly-icon-yellow-star:before {
+  content: '\e9a1';
+  color: #ffda44;
+}
+
+.ly-icon-action:before {
+  content: '\e100';
+}
+
+.ly-icon-all:before {
+  content: '\e101';
+}
+
+.ly-icon-application:before {
+  content: '\e102';
+}
+
+.ly-icon-information-button:before {
+  content: '\e113';
+  color: #277bc6;
+}
+
+.ly-icon-cancel:before {
+  content: '\e114';
+  color: #d0021b;
+}
+
+.ly-icon-check:before {
+  content: '\e115';
+  color: #62ae0a;
+}
+
+.ly-icon-save:before {
+  content: '\e116';
+  color: #545454;
+}
+
+.ly-icon-info:before {
+  content: '\e900';
+  color: #277bc6;
+}
+
+.ly-appheader-avatar:before {
+  content: url(../images/avatar_24px.png);
+}
+
+.ly-app-icon {
+  height: 123px;
+  width: 200px;
+  margin-bottom: 10px;
+  background-image: url(../images/Sprites.png);
+  background-repeat: no-repeat;
+  background-size: 3830px;
+}
+
+.ly-app-icon-small {
+  background-image: url(../images/Sprites.png);
+  height: 40px;
+  width: 40px;
+  margin: 0;
+  display: inline-block;
+  background-size: 3830px;
+}
+
+.absences {
+  background-position: -2548px -4px;
+}
+
+.absences-small {
+  background-position: -2965px 0;
+}
+
+.activities {
+  background-position: -1696px -4px;
+}
+
+.activities-small {
+  background-position: -3011px 0;
+}
+
+.analytics {
+  background-position: -2334px -4px;
+}
+
+.analytics-small {
+  background-position: -3103px 0;
+}
+
+.dropfile {
+  background-position: -2122px -4px;
+}
+
+.dropfile-small {
+  background-position: -3149px 0;
+}
+
+.dropfile_deloitte {
+  background-position: -2122px -4px;
+}
+
+.dropfile_deloitte-small {
+  background-position: -3149px 0;
+}
+
+.finance {
+  background-position: -1px -1px;
+}
+
+.finance-small {
+  background-position: -3333px 0;
+}
+
+.fleet {
+  background-position: -1063px -3px;
+}
+
+.fleet-small {
+  background-position: -3379px 0;
+}
+
+.hra {
+  background-position: -1910px -4px;
+}
+
+.hra-small {
+  background-position: -3562px 0;
+}
+
+.identity_admin {
+  background-position: -219px -4px;
+}
+
+.identity_admin-small {
+  background-position: -3425px 0;
+}
+
+.loyins {
+  background-position: -1275px -4px;
+}
+
+.loyins-small {
+  background-position: -3057px 0;
+}
+
+.mf {
+  background-position: -2756px -3px;
+}
+
+.mf-small {
+  background-position: -3470px 0;
+}
+
+.payslips {
+  background-position: -1487px -3px;
+}
+
+.payslips-small {
+  background-position: -3516px 0;
+}
+
+.psft_employee {
+  background-position: -853px -3px;
+}
+
+.psft_employee-small {
+  background-position: -3195px 0;
+}
+
+.psft_hr {
+  background-position: -427px -3px;
+}
+
+.psft_hr-small {
+  background-position: -3241px 0;
+}
+
+.psft_manager {
+  background-position: -639px -4px;
+}
+
+.psft_manager-small {
+  background-position: -3241px 0;
+}
+
+.ly-page-title {
+  font-size: $ly-largest-font-size;
+  margin-left: 10px;
+  font-weight: 300;
+}
+
+.ly-prev {
+  left: calc(-3.2%);
+}
+
+.ly-next {
+  right: calc(-3.2%);
+}
+
+.ly-icon-button {
+  padding: 5px 10px 5px 10px;
+  font-size: 16px;
+  border: 1px solid transparent;
+  color: #696969;
+  background-color: #0000;
+}
+
+.ly-next,
+.ly-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+}
+
+.ly-icon-button:hover {
+  background-color: $ly-neutral-color4;
+  color: $ly-brand-color-light1 !important;
+  border: solid lightgray 1px;
+  border-radius: 3px;
+}
+
+.ly-dialog {
+  overflow: hidden;
+  height: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 1px 1px 10px 0 hsla(0, 0%, 0%, 0.45);
+  background: $ly-neutral-color2;
+  border: 1px solid $ly-neutral-color9;
+  border-radius: 1px;
+}
+
+.ly-warning-icon {
+  background-image: url(../images/sprite.svg);
+  background-size: 968px 44px;
+  background-position: -950px -2px;
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+}
+
+.ly-error-icon {
+  background-image: url(../images/sprite.svg);
+  background-size: 968px 44px;
+  background-position: -910px -2px;
+  width: 16px;
+  height: 16px;
+}
+
+.ly-danger-icon {
+  background-image: url(../images/sprite.svg);
+  background-size: 1452px 66px;
+  background-position: -1365px -3px;
+  width: 24px;
+  height: 24px;
+}
+
+.ly-img-download {
+  background-image: url(../images/download.png);
+  width: 14px;
+  height: 15px;
+  display: inline-block;
+}
+
+.ly-icon-non-checked {
+  background-image: url(../images/sprite.svg);
+  background-size: 968px 44px;
+  background-position: -354px -2px;
+  width: 16px;
+  height: 16px;
+}
+
+.ly-icon-checked {
+  background-image: url(../images/sprite.svg);
+  background-size: 968px 44px;
+  background-position: -334px -2px;
+  width: 16px;
+  height: 16px;
+}
+
+.ly-icon-done {
+  background-image: url(../images/sprite.svg);
+  background-size: 1452px 66px;
+  background-position: -1335px -3px;
+  width: 24px;
+  height: 24px;
+}
+
+.ly-circle-overlay {
+  background-image: url(../images/sprite.svg);
+  background-size: 968px 44px;
+  background-position: -854px -2px;
+  width: 32px;
+  height: 32px;
+  animation: spinnerAnimation 1s infinite linear;
+}
+
+@keyframes spinnerAnimation {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+input.mat-input-element {
+  padding-left: 3px !important;
+  margin: 2px !important;
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: rgb(252, 252, 253);
+}
+
+.ly-error {
+  border: 2px solid #e65a66 !important;
+}
+
+.ly-center-position {
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.ly-require-icon {
+  color: $ly-brand-color-dark1;
+  font-size: $ly-large-font-size;
+  font-weight: normal;
+  line-height: $ly-font-size;
+  font-family: inherit;
+  background-color: transparent;
+  border-radius: 0;
+  height: auto;
+  width: auto;
+}
+
+.toast-container {
+  top: 85px !important;
+  box-sizing: content-box !important;
+}
+
+.toast-container .ngx-toastr {
+  width: 365px !important;
+}
+
+@media screen and (max-width: 1023px) {
+  .toast-container {
+    top: 110px !important;
+  }
+}
+
+.toast-title,
+.toast-message {
+  color: black;
+}
+
+.toast-message .header {
+  margin-bottom: 10px !important;
+}
+
+.toast-message a {
+  color: #277bc3 !important;
+  text-decoration: none !important;
+}
+
+.toast-message a:hover {
+  text-decoration: underline !important;
+}
+
+.toast-message .fa-exclamation-circle {
+  color: #fbbd08 !important;
+}
+
+.toast-warning {
+  background-image: none !important;
+  padding-left: 20px !important;
+  background-color: #fcfcfd !important;
+  box-shadow: 1px 1px 10px 0 hsla(0, 0%, 0%, 0.45) !important;
+}
+
+.toast-close-button {
+  color: black !important;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}

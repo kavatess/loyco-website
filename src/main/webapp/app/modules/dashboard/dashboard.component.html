@@ -1,0 +1,20 @@
+<ly-page-layout>
+  <div title-page>
+    <span class="ly-icon-24 ly-icon-chart"></span>
+    <span class="ly-page-title">{{ 'tab.dashboard' | i18n }}</span>
+  </div>
+  <!-- balance-dashboard -->
+  <ly-balance-dashboard content-page *ngIf="data.get('balance')"></ly-balance-dashboard>
+  <!-- next absences-->
+  <ly-next-absence-table content-page *ngIf="data.get('myNextAbsences')"></ly-next-absence-table>
+  <!-- team absences-->
+  <ly-team-absences content-page *ngIf="data.get('team-absences')"></ly-team-absences>
+  <!-- payslips -->
+  <ly-payslips content-page *ngIf="data.get('payslips')"></ly-payslips>
+  <!--nano donations-->
+  <ly-nano-donation content-page *ngIf="data.get('nano-donation')"></ly-nano-donation>
+  <!-- timesheet validation -->
+  <ly-timesheet-validation content-page *ngIf="data.get('timesheet-validation')"></ly-timesheet-validation>
+  <!-- absences to be validated -->
+  <ly-absences-to-be-validated content-page *ngIf="data.get('absences-to-be-validated')"></ly-absences-to-be-validated>
+</ly-page-layout>

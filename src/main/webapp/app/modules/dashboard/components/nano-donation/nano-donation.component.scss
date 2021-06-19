@@ -1,0 +1,18 @@
+@import 'scss/variables';
+.ly-nano-donation-item {
+  padding: $ly-small-font-size;
+  background-image: linear-gradient(#e0e1e1, #e0e1e1);
+  background-position: 0 0;
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  border-top: 1px solid transparent;
+  line-height: normal;
+}
+.ly-nano-donation-item:hover {
+  background-color: $ly-neutral-color5;
+  border-top: 1px solid $ly-neutral-color8;
+}
+.ly-first-item {
+  background-size: 0;
+}

@@ -1,0 +1,14 @@
+.ly-timesheet-validation {
+  margin-bottom: 15px;
+  margin-top: 10px;
+  text-align: center;
+  .ly-validate-number {
+    font-size: 40px;
+    font-weight: bold;
+    display: block;
+    color: #cc0000;
+  }
+  .ly-x-no-validate {
+    color: #009900;
+  }
+}

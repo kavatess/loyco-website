@@ -1,0 +1,128 @@
+@import 'scss/variables';
+
+.ly-drop-down {
+  outline: none;
+  max-height: 30px;
+  margin-top: 8px;
+  .ly-list {
+    display: none;
+    z-index: 2;
+    margin-top: 30px;
+    position: absolute;
+    animation: appear-list 0.2s ease;
+    transform-origin: top left;
+    box-shadow: 0 3px 3px hsla(0, 0%, 0%, 0.1);
+    .ly-item {
+      display: flex;
+      flex-direction: row;
+      background: #fff;
+      padding: 7px;
+      align-items: center;
+      .ly-language-data {
+        display: none;
+      }
+      @media screen and(min-width: 768px) {
+        .ly-language-data {
+          display: block;
+        }
+      }
+      div {
+        margin-right: 8px;
+      }
+    }
+
+    .ly-item:hover {
+      background-color: $ly-neutral-color5;
+      cursor: pointer;
+    }
+  }
+  .ly-x-list-user {
+    right: 0;
+    @media screen and(min-width: 768px) {
+      right: auto;
+    }
+  }
+  @media screen and(min-width: 1024px) {
+    margin-top: 0px;
+  }
+  .ly-label-container {
+    display: flex;
+    align-items: center;
+    padding: 4px 7px;
+    div:nth-child(1) {
+      display: block;
+    }
+    div:nth-child(2) {
+      display: none;
+    }
+    @media screen and(min-width: 768px) {
+      padding-right: 12px;
+      div:nth-child(2) {
+        display: block;
+      }
+      .ly-x-userOption {
+        display: none !important;
+      }
+    }
+    .ly-hidden {
+      color: $ly-neutral-color12;
+      padding-left: 15px;
+      padding-bottom: 5px;
+      font-size: 15px;
+      display: none;
+      @media screen and(min-width: 768px) {
+        display: block;
+      }
+    }
+    .ly-app-data {
+      padding: 0px 0px 5px 5px !important;
+      margin: 0 !important;
+    }
+  }
+  .ly-label-container:hover {
+    color: $ly-brand-color-dark1;
+    .ly-hidden {
+      color: $ly-brand-color-light1 !important;
+    }
+  }
+}
+
+.ly-drop-down:hover {
+  cursor: default;
+  background-color: $ly-neutral-color4;
+  outline: 1px solid $ly-neutral-color9;
+}
+
+.ly-x-selected {
+  background-color: $ly-brand-color !important;
+  .ly-list {
+    display: block !important;
+  }
+  .ly-hidden {
+    color: white !important;
+  }
+  .ly-label-container {
+    color: white !important;
+  }
+  .ly-label-container:hover {
+    color: $ly-brand-color-light1 !important;
+  }
+}
+
+@keyframes appear-list {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(0.25);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  75% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
